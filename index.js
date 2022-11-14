@@ -78,9 +78,15 @@ $(document).ready(function () {
 
   // CASES
   const viewCase = () => {
-    document.querySelectorAll(".case-tile").forEach((tile) => {
+    const tiles = document.querySelectorAll(".case-tile");
+
+    tiles.forEach((tile) => {
         tile.addEventListener("click", () => {
             tile.style.display = "flex";
+        });
+
+        tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
+            tile.style.display = "none";
         });
     });
   };
@@ -96,7 +102,7 @@ $(document).ready(function () {
     childList: true
   });
 
-  $("body").on("click", ".btn-close-case-popup", closeCasePopup);
+//   $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
 
