@@ -78,7 +78,7 @@ $(document).ready(function () {
 
   // CASES
 
-  document.querySelectorAll(".pagination-button").forEach((item, index) => {
+  document.querySelectorAll(".pagination_button").forEach((item, index) => {
     item.addEventListener("click", () => {
         console.log(document.querySelectorAll(".case-tile").length);
     });
