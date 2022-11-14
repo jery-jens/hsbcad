@@ -82,11 +82,11 @@ $(document).ready(function () {
 
     tiles.forEach((tile) => {
         tile.addEventListener("click", () => {
-            tile.style.display = "flex";
+            tile.querySelector(".popup").style.display = "flex";
         });
 
         tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
-            tile.style.display = "none";
+            tile.querySelector(".popup").style.display = "none";
         });
     });
   };
