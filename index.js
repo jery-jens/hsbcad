@@ -78,6 +78,12 @@ $(document).ready(function () {
 
   // CASES
 
+  document.querySelectorAll(".pagination-button").forEach((item, index) => {
+    item.addEventListener("click", () => {
+        console.log(document.querySelectorAll(".case-tile").length);
+    });
+  });
+
   document.querySelectorAll(".case-tile").forEach((item, index) => {
     item.addEventListener("click", () => {
         console.log(index)
