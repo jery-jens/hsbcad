@@ -84,11 +84,13 @@ $(document).ready(function () {
         tile.addEventListener("click", () => {
             tile.querySelector(".popup").style.display = "flex";
             console.log(tile.querySelector(".btn-close-case-popup"));
+            lockPageScroll();
         });
 
         tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
             console.log("ja, sluit");
             tile.querySelector(".popup").style.display = "none";
+            unLockPageScroll();
         });
     });
   };
