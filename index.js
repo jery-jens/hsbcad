@@ -77,35 +77,8 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-  const tiles = document.querySelectorAll(".case-tile");
-
-  if (tiles) {
-    const viewCase = () => {
-        tiles.forEach((tile) => {
-            tile.querySelector(".case-click").addEventListener("click", () => {
-                tile.querySelector(".popup").style.display = "flex";
-                lockPageScroll();
-            });
-    
-            tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
-                tile.querySelector(".popup").style.display = "none";
-                unLockPageScroll();
-            });
-        });
-      };
-    
-      viewCase();
-    
-      const observer = new MutationObserver(() => {
-        viewCase();
-      });
-    
-      observer.observe(document.querySelector(".collection-list"), {
-        attributes: true,
-        childList: true
-      });
-  };
-
+  $(".case-tile").click(openCase);
+  $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
 
