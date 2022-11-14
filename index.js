@@ -77,36 +77,40 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-
   let caseItems = document.querySelectorAll(".case-tile");
 
-      // Options for the observer (which mutations to observe)
-      var config = { attributes: true, childList: true };
+  const viewCase = () => {
+    $(".case-tile").click(openCase);
+  };
 
-      // Callback function to execute when mutations are observed
-      var callback = function() {
-        caseItems = document.querySelectorAll(".case-tile");
+  viewCase();
 
-        caseItems.forEach((item, index) => {
-            item.addEventListener("click", () => {
-                item.style.display = "flex";
-            });
-          });
-      };
-  
-      // Create an observer instance linked to the callback function
-      var observer = new MutationObserver(callback);
-  
-      // Start observing the target node for configured mutations
-      observer.observe(document.querySelector(".collection-list"), config);
-
-  document.querySelectorAll(".pagination_button").forEach((item, index) => {
-    item.addEventListener("click", () => {
-        console.log(document.querySelectorAll(".case-tile").length);
-    });
+  const observer = new MutationObserver(() => {
+    viewCase();
   });
 
-//   $(".case-tile").click(openCase);
+  observer.observe(document.querySelector(".collection-list"), {
+    attributes: true,
+    childList: true
+  });
+
+    //   // Options for the observer (which mutations to observe)
+    //   var config = { attributes: true, childList: true };
+
+    //   // Callback function to execute when mutations are observed
+    //   var callback = function() {
+    //     caseItems = document.querySelectorAll(".case-tile");
+
+    //   };
+  
+    //   // Create an observer instance linked to the callback function
+    //   var observer = new MutationObserver(callback);
+  
+    //   // Start observing the target node for configured mutations
+    //   observer.observe(document.querySelector(".collection-list"), config);
+
+
+  $(".case-tile").click(openCase);
   $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
