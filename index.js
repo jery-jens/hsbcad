@@ -81,7 +81,7 @@ $(document).ready(function () {
     const tiles = document.querySelectorAll(".case-tile");
 
     tiles.forEach((tile) => {
-        tile.querySelector(".case-img").addEventListener("click", () => {
+        tile.querySelector(".case-click").addEventListener("click", () => {
             tile.querySelector(".popup").style.display = "flex";
             console.log(tile.querySelector(".btn-close-case-popup"));
             lockPageScroll();
@@ -106,7 +106,6 @@ $(document).ready(function () {
     childList: true
   });
 
-//   $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
 
