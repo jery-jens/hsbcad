@@ -77,10 +77,12 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-  let caseItems = document.querySelectorAll(".case-tile");
-
   const viewCase = () => {
-    $(".case-tile").click(openCase);
+    document.querySelectorAll(".case-tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+            tile.style.display = "flex";
+        });
+    });
   };
 
   viewCase();
