@@ -80,31 +80,31 @@ $(document).ready(function () {
   const viewCase = () => {
     const tiles = document.querySelectorAll(".case-tile");
 
-    tiles.forEach((tile) => {
-        tile.querySelector(".case-click").addEventListener("click", () => {
-            tile.querySelector(".popup").style.display = "flex";
-            console.log(tile.querySelector(".btn-close-case-popup"));
-            lockPageScroll();
+    if (tiles) {
+        tiles.forEach((tile) => {
+            tile.querySelector(".case-click").addEventListener("click", () => {
+                tile.querySelector(".popup").style.display = "flex";
+                lockPageScroll();
+            });
+    
+            tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
+                tile.querySelector(".popup").style.display = "none";
+                unLockPageScroll();
+            });
         });
-
-        tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
-            console.log("ja, sluit");
-            tile.querySelector(".popup").style.display = "none";
-            unLockPageScroll();
-        });
-    });
-  };
-
-  viewCase();
-
-  const observer = new MutationObserver(() => {
-    viewCase();
-  });
-
-  observer.observe(document.querySelector(".collection-list"), {
-    attributes: true,
-    childList: true
-  });
+      };
+    
+      viewCase();
+    
+      const observer = new MutationObserver(() => {
+        viewCase();
+      });
+    
+      observer.observe(document.querySelector(".collection-list"), {
+        attributes: true,
+        childList: true
+      });    
+    };
 
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
