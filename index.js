@@ -86,11 +86,10 @@ $(document).ready(function () {
       // Callback function to execute when mutations are observed
       var callback = function() {
         caseItems = document.querySelectorAll(".case-tile");
-        console.log(caseItems.length);
 
         caseItems.forEach((item, index) => {
             item.addEventListener("click", () => {
-                console.log(index)
+                item.style.display = "flex";
             });
           });
       };
