@@ -94,23 +94,6 @@ $(document).ready(function () {
     childList: true
   });
 
-    //   // Options for the observer (which mutations to observe)
-    //   var config = { attributes: true, childList: true };
-
-    //   // Callback function to execute when mutations are observed
-    //   var callback = function() {
-    //     caseItems = document.querySelectorAll(".case-tile");
-
-    //   };
-  
-    //   // Create an observer instance linked to the callback function
-    //   var observer = new MutationObserver(callback);
-  
-    //   // Start observing the target node for configured mutations
-    //   observer.observe(document.querySelector(".collection-list"), config);
-
-
-  $(".case-tile").click(openCase);
   $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
