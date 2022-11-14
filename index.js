@@ -77,10 +77,10 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-  const viewCase = () => {
-    const tiles = document.querySelectorAll(".case-tile");
+  const tiles = document.querySelectorAll(".case-tile");
 
-    if (tiles) {
+  if (tiles) {
+    const viewCase = () => {
         tiles.forEach((tile) => {
             tile.querySelector(".case-click").addEventListener("click", () => {
                 tile.querySelector(".popup").style.display = "flex";
@@ -103,8 +103,8 @@ $(document).ready(function () {
       observer.observe(document.querySelector(".collection-list"), {
         attributes: true,
         childList: true
-      });    
-    };
+      });
+  };
 
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
