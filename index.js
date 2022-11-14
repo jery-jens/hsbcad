@@ -87,6 +87,12 @@ $(document).ready(function () {
       var callback = function() {
         caseItems = document.querySelectorAll(".case-tile");
         console.log(caseItems.length);
+
+        caseItems.forEach((item, index) => {
+            item.addEventListener("click", () => {
+                console.log(index)
+            });
+          });
       };
   
       // Create an observer instance linked to the callback function
@@ -98,12 +104,6 @@ $(document).ready(function () {
   document.querySelectorAll(".pagination_button").forEach((item, index) => {
     item.addEventListener("click", () => {
         console.log(document.querySelectorAll(".case-tile").length);
-    });
-  });
-
-  caseItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        console.log(index)
     });
   });
 
