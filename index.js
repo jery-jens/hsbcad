@@ -83,9 +83,11 @@ $(document).ready(function () {
     tiles.forEach((tile) => {
         tile.addEventListener("click", () => {
             tile.querySelector(".popup").style.display = "flex";
+            console.log(tile.querySelector(".btn-close-case-popup"));
         });
 
         tile.querySelector(".btn-close-case-popup").addEventListener("click", () => {
+            console.log("ja, sluit");
             tile.querySelector(".popup").style.display = "none";
         });
     });
