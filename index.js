@@ -77,7 +77,14 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-  $(".case-tile").click(openCase);
+
+  document.querySelectorAll(".case-tile").forEach((item, index) => {
+    item.addEventListener("click", () => {
+        console.log(index)
+    });
+  });
+
+//   $(".case-tile").click(openCase);
   $("body").on("click", ".btn-close-case-popup", closeCasePopup);
   $("body").on("click", ".prev-case-photo", prevCasePhoto);
   $("body").on("click", ".next-case-photo", nextCasePhoto);
