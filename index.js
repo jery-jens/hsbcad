@@ -77,10 +77,14 @@ $(document).ready(function () {
   $(".btn-close-popup").click(closePopup);
 
   // CASES
-  $(".case-tile").click(openCase);
-  $("body").on("click", ".btn-close-case-popup", closeCasePopup);
-  $("body").on("click", ".prev-case-photo", prevCasePhoto);
-  $("body").on("click", ".next-case-photo", nextCasePhoto);
+  if (window.location.pathname !== "/cases") {
+    $(".case-tile").click(openCase);
+    $("body").on("click", ".btn-close-case-popup", closeCasePopup);
+    $("body").on("click", ".prev-case-photo", prevCasePhoto);
+    $("body").on("click", ".next-case-photo", nextCasePhoto);
+  };
+
+  console.log(window.location.pathname)
 
   // CONTACT
   initContact();
