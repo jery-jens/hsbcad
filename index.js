@@ -81,7 +81,7 @@ $(document).ready(function () {
     const tiles = document.querySelectorAll(".case-tile");
 
     tiles.forEach((tile) => {
-        tile.addEventListener("click", () => {
+        tile.querySelector(".case-img").addEventListener("click", () => {
             tile.querySelector(".popup").style.display = "flex";
             console.log(tile.querySelector(".btn-close-case-popup"));
             lockPageScroll();
